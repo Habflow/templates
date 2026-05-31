@@ -1,0 +1,24 @@
+{
+  "name": "@habflow/templates",
+  "version": "0.1.0",
+  "description": "Bundled workflow templates for HabboFlow",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Habflow/templates.git"
+  },
+  "files": [
+    "room-management/**/*.yaml",
+    "README.md"
+  ],
+  "keywords": [
+    "habflow",
+    "habbo",
+    "templates",
+    "workflows",
+    "automation"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
