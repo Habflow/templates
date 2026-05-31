@@ -1,0 +1,48 @@
+# ---------------------------------------------------------------------------
+# Template: Greet on Enter
+# Category: room-management
+#
+# Sends a personalised greeting variable to a room-level variable whenever
+# the workflow is triggered manually (e.g. via a webhook or the Run button).
+# The greeting is stored in a room-scoped "lastGreeting" variable so other
+# automations can read it later.
+# ---------------------------------------------------------------------------
+
+dsl: "1.0.0"
+namespace: room-management
+name: greet-on-enter
+version: "1.0.0"
+
+trigger:
+  type: manual
+
+nodes:
+  - id: write-greeting
+    kind: habbo-write-variable
+    config:
+      kind: habbo-write-variable
+      roomId: "{{roomId}}"
+      variableName: lastGreeting
+      value: "Welcome to the room!"
+    next: []
+
+extensions:
+  x-habflow:
+    trigger:
+      type: manual
+    editor:
+      nodes:
+        - id: write-greeting
+          position:
+            x: 200
+            y: 150
+    template:
+      title: Greet on Enter
+      description: >
+        Stores a welcome message in a room-scoped variable each time the
+        automation runs. Connect it to a room-entry event to greet every
+        visitor automatically.
+      icon: door-open
+      author:
+        habboName: HabboFlow
+        habboHotel: com
